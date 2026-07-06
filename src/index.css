@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+/* Global sharpness enhancement for all images */
+img {
+  image-rendering: -webkit-optimize-contrast;
+}
+
+@theme {
+  --color-brand-blue-light: #4f46e5;
+  --color-brand-blue: #1e3a8a;
+  --color-brand-blue-dark: #0f172a;
+  --color-brand-orange-light: #fb923c;
+  --color-brand-orange: #ea580c;
+  --color-brand-orange-dark: #9a3412;
+
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #f8fafc;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Custom scrollbar for inner dialogs */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+/* Marquee utility */
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+}
+.marquee-content {
+  display: inline-block;
+  animation: marquee 30s linear infinite;
+}
+@keyframes marquee {
+  0% { transform: translate3d(100%, 0, 0); }
+  100% { transform: translate3d(-100%, 0, 0); }
+}
+
+/* Shake effect for forced password updates */
+@keyframes shake {
+  0%, 100% { transform: scale(1) translateX(0); }
+  20%, 60% { transform: scale(0.99) translateX(-6px); }
+  40%, 80% { transform: scale(0.99) translateX(6px); }
+}
+.animate-shake {
+  animation: shake 0.4s ease-in-out;
+}
+
+/* Soft fade and scale up */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Pulse indicator for new bulletins */
+@keyframes pulseBlink {
+  0%, 100% { opacity: 1; transform: scale(1); filter: drop-shadow(0 0 2px rgba(225, 29, 72, 0.4)); }
+  50% { opacity: 0.2; transform: scale(0.92); filter: drop-shadow(0 0 8px rgba(225, 29, 72, 0.8)); }
+}
+.animate-new-blink {
+  animation: pulseBlink 0.8s infinite ease-in-out;
+}

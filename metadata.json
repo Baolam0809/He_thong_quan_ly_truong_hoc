@@ -1,0 +1,6 @@
+{
+  "name": "Cổng thông tin điện tử THCS Hòa Phú",
+  "description": "Cổng thông tin điện tử & chuyển đổi số học vụ cho Trường THCS Hòa Phú. Quản trị học sinh, học bạ, khóa học bồi dưỡng bám sát tiêu chuẩn cải tiến.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
